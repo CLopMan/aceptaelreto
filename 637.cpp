@@ -5,7 +5,7 @@
 #define space 5
 #define letter_gap 3
 
-int durations[] = {5, 9, 11, 7, 1, 9, 9,
+int const durations[] = {5, 9, 11, 7, 1, 9, 9,
                    7, 3, 13, 9, 9, 7,
                    5, 11, 11, 13, 7, 5, 
                    3, 7, 9, 9, 11, 13, 11};
