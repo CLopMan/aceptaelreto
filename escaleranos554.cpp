@@ -14,10 +14,10 @@ a = min(pa, pb, pc) => 1
 #include <vector>
 #include <algorithm>
 
-std::vector<int64_t> calculated(101, -1); 
-constexpr int64_t mod = 1000000007;
+std::vector<int32_t> calculated(101, -1); 
+constexpr int32_t mod = 1000000007;
 
-int64_t _escaleranos(int N, const std::vector<int> &steps) {
+int32_t _escaleranos(int N, const std::vector<int> &steps) {
     if (N == 0) {
         return 1;
     }
@@ -25,7 +25,7 @@ int64_t _escaleranos(int N, const std::vector<int> &steps) {
     if (N < *std::min_element(steps.begin(), steps.end())) {
         return 0;
     }
-    int64_t acum = 0;
+    int32_t acum = 0;
     for (int i : steps) {
         if (N - i > 0 && calculated[N - i] != -1) acum += calculated[N - i];
         else 
@@ -42,11 +42,8 @@ int64_t _escaleranos(int N, const std::vector<int> &steps) {
 
 
 
-int64_t escaleranos(int N, const std::vector<int> &steps) {
+int32_t escaleranos(int N, const std::vector<int> &steps) {
     if (calculated[N] != -1) return calculated[N];
-
-    //int min = *std::min_element(steps.begin(), steps.end());
-
     calculated[N] = _escaleranos(N, steps);
     return calculated[N];
 
