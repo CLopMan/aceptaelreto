@@ -49,6 +49,7 @@ int addToBePalindrome_it(std::string word, int size) {
         }
 
     }
+    return 0;
 }
 
 
